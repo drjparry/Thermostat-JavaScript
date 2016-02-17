@@ -5,4 +5,9 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
+  it('gets the current temperature', function() {
+    var thermostat = new Thermostat();
+    expect(thermostat.getCurrentTemperature()).toEqual(20);
+  });
+
 });
