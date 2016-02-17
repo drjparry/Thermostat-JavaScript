@@ -7,8 +7,8 @@ describe("Thermostat features", function() {
 
   it('User can increase the temperature', function() {
     var thermostat = new Thermostat();
-    thermostat.turnUp(5);
-    expect(thermostat.temperature).toEqual(25);
+    thermostat.turnUp(1);
+    expect(thermostat.temperature).toEqual(21);
   });
 });
 
