@@ -28,4 +28,11 @@ describe("Thermostat", function() {
     thermostat.turnDown(10);
     expect(function() { thermostat.turnDown(1)}).toThrowError('Temperature cannot be below 10 degrees');
   });
+
+  it('Power saving mode can be turned on', function() {
+    thermostat.powerSavingMode;
+    expect(thermostat.ispowerSavingMode()).toBe(true);
+  });
+
+
 });
