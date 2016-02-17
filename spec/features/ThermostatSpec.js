@@ -11,3 +11,4 @@ describe("Thermostat features", function() {
     expect(thermostat.temperature).toEqual(25);
   });
 });
+
