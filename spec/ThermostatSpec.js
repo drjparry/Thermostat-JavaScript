@@ -19,7 +19,7 @@ describe("Thermostat", function() {
       expect(thermostat.temperature).toEqual(21);
     });
 
-    it('decreases current temperature', function(){    
+    it('decreases current temperature', function(){
       thermostat.turnDown();
       expect(thermostat.temperature).toEqual(19);
     });
@@ -29,6 +29,14 @@ describe("Thermostat", function() {
       thermostat.turnDown();
       }
       expect(function() { thermostat.turnDown()}).toThrowError('Temperature cannot be below 10 degrees');
+    });
+
+    it('resets the temperature to 20 degrees', function(){
+      for(i=0; i<5; i++) {
+      thermostat.turnDown();
+      }
+      thermostat.tempReset();
+      expect(thermostat.temperature).toEqual(20);
     });
 
       describe('when in PSM', function(){
@@ -43,7 +51,7 @@ describe("Thermostat", function() {
               thermostat.turnUp();
             }
             expect(function() { thermostat.turnUp()}).toThrowError('Temperature cannot go over 25 degrees');
-          }); 
+          });
 
       });
 
@@ -54,12 +62,12 @@ describe("Thermostat", function() {
         })
 
           it('Temperature cannot be increased above 32', function() {
-              
+
               for(i=0; i<12; i++) {
                 thermostat.turnUp();
               }
               expect(function() { thermostat.turnUp()}).toThrowError('Temperature cannot go over 32 degrees');
-          }); 
+          });
 
       });
 

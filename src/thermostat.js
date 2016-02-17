@@ -30,6 +30,10 @@ Thermostat.prototype.changePowerSavingMode = function() {
   return this.powerSavingMode = false;}
 };
 
+Thermostat.prototype.tempReset = function() {
+  this.temperature = 20;
+};
+
 Thermostat.prototype._turnUpWithPSMOn = function() {
   if (this.temperature < MAXTEMPWITHPSMON)
       this.temperature ++;
