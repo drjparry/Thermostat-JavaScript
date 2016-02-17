@@ -23,4 +23,9 @@ describe("Thermostat", function() {
     thermostat.turnDown(5);
     expect(thermostat.temperature).toEqual(15);
   });
+
+  it('Temperature cannot be decreased below 10', function() {
+    thermostat.turnDown(10);
+    expect(function() { thermostat.turnDown(1)}).toThrowError('Temperature cannot be below 10 degrees');
+  });
 });
