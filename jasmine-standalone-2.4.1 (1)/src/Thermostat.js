@@ -23,14 +23,18 @@ Thermostat.prototype.decreaseTemperature = function() {
 	if(this.temperature <= this.minTemp) {
 		throw new Error('You cannot go below 10 degrees')};
 	this.temperature --; // -= 1
-};	
+};
 
 Thermostat.prototype.changePowerSavingMode = function() {
 	if(this.maxTemp === 25) {
 		this.powerSavingMode = false;
 		return this.maxTemp = 32};
-	this.powerSavingMode = true;	
+	this.powerSavingMode = true;
 	this.maxTemp = 25;
+};
+
+Thermostat.prototype.resetTemperature = function() {
+	this.temperature = 20;
 };
 
 
