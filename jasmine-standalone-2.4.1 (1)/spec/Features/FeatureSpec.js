@@ -23,4 +23,11 @@ describe('Thermostat', function() {
 		expect(thermostat.getCurrentTemperature()).toEqual(21);
 	});
 
+//3. Decreases the temperature with the down button
+
+	it('increases in temperature with the down button', function(){
+		thermostat.decreaseTemperature();
+		expect(thermostat.getCurrentTemperature()).toEqual(19);
+	});
+
 });

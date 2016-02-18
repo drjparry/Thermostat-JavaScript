@@ -9,9 +9,13 @@ Thermostat.prototype.getCurrentTemperature = function(){
 };
 
 Thermostat.prototype.increaseTemperature = function() {
-  this.temperature += 1;
+  this.temperature ++ ;  // += 1
 };
 
-// increaseTemperature = up method in solution?
+Thermostat.prototype.decreaseTemperature = function() {
+	this.temperature -- ; // -= 1
+};	
+
+
 
 
