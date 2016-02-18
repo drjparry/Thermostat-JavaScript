@@ -5,6 +5,7 @@
 function Thermostat(){
 	this.temperature = 20;
 	this.minTemp = 10;
+	this.maxTemp = 25;
 };
 
 Thermostat.prototype.getCurrentTemperature = function(){
@@ -12,6 +13,8 @@ Thermostat.prototype.getCurrentTemperature = function(){
 };
 
 Thermostat.prototype.increaseTemperature = function() {
+	if(this.temperature >= this.maxTemp) {
+		throw new Error('You cannot go above 25 degrees in power saving mode')};
   this.temperature ++ ;  // += 1
 };
 
@@ -20,4 +23,3 @@ Thermostat.prototype.decreaseTemperature = function() {
 		throw new Error('You cannot go below 10 degrees')};
 	this.temperature --; // -= 1
 };	
-

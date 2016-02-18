@@ -43,5 +43,16 @@ describe('Thermostat', function() {
     expect(function(){
       thermostat.decreaseTemperature()}).toThrowError('You cannot go below 10 degrees');
   });
+
+//4. If power saving mode is on, the maximum temperature is 25 degrees
+
+  it('cannot go above 25 degrees when in power saving mode', function() {
+    for(var i = 0; i < 5; i ++) {
+      thermostat.increaseTemperature();
+    }
+    expect(function(){
+      thermostat.increaseTemperature()}).toThrowError('You cannot go above 25 degrees in power saving mode');
+  });
+  
 });
 
