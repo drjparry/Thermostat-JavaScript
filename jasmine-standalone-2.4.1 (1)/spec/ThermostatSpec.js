@@ -51,8 +51,18 @@ describe('Thermostat', function() {
       thermostat.increaseTemperature();
     }
     expect(function(){
-      thermostat.increaseTemperature()}).toThrowError('You cannot go above 25 degrees in power saving mode');
+      thermostat.increaseTemperature()}).toThrowError('You cannot go above 25 degrees');
   });
+
+  it('cannot go above 32 degrees when NOT in power saving mode', function() {
+    thermostat.changePowerSavingMode();
+    for(var i = 0; i < 12; i ++) {
+      thermostat.increaseTemperature();
+    }
+    expect(function(){
+      thermostat.increaseTemperature()}).toThrowError('You cannot go above 32 degrees');
+  });
+
   
 });
 
