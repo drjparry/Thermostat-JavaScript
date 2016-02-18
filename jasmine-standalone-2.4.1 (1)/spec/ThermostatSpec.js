@@ -63,6 +63,9 @@ describe('Thermostat', function() {
       thermostat.increaseTemperature()}).toThrowError('You cannot go above 32 degrees');
   });
 
+  it('has powersaving mode on by default', function(){
+    expect(thermostat.powerSavingMode).toBe(true);
+  });
   
 });
 
