@@ -3,6 +3,8 @@
 
 'use strict';
 
+//1. Thermostat starts at 20 degrees
+
 describe('Thermostat', function() {
     var thermostat;
 
@@ -11,11 +13,23 @@ describe('Thermostat', function() {
     });
 
   it('starts at 20 degrees', function() {
-    expect(thermostat.getCurrentTemperature()).toEqual(20);
+    expect(thermostat.temperature).toEqual(20);
   });
 
-  it('increases in temperature with the up button', function() {
-    thermostat.increaseTemperature();
-    expect(thermostat.getCurrentTemperature()).toEqual(21);
-  });
+//2. Increases the temperature with the up button
+
+	it('increases in temperature with the up button', function(){
+		thermostat.increaseTemperature();
+		expect(thermostat.getCurrentTemperature()).toEqual(21);
+	});
+
+//3. Decreases the temperature with the down button
+
+	it('increases in temperature with the down button', function(){
+		thermostat.decreaseTemperature();
+		expect(thermostat.getCurrentTemperature()).toEqual(19);
+	});
+
+});
+
 });
