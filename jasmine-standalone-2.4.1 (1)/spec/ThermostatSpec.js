@@ -75,7 +75,24 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
+  it('has a yellow display if temperature is less than 25 and more than 18', function() {
+    expect(thermostat.displayTemperature).toEqual('Yellow')
+  });
 
+  it('has a green display if temperature is less than 18', function() {
+    for(var i = 0; i < 3; i ++) {
+      thermostat.decreaseTemperature();
+    }
+    expect(thermostat.displayTemperature).toEqual('Green')
+  });
+
+  it('has a red display if temperature is over 25', function() {
+    thermostat.changePowerSavingMode();
+    for(var i = 0; i < 8; i ++) {
+      thermostat.increaseTemperature();
+    }
+    expect(thermostat.displayTemperature).toEqual('Red')
+  });
 
 });
 
