@@ -1,6 +1,4 @@
-'use strict';
 
-//const minTemp = 10;
 
 function Thermostat(){
 	this.temperature = 20;
@@ -17,7 +15,7 @@ Thermostat.prototype.getCurrentTemperature = function(){
 Thermostat.prototype.increaseTemperature = function() {
 	if(this.temperature >= this.maxTemp) {
 		throw new Error('You cannot go above '+ this.maxTemp + ' degrees')};
-  this.temperature ++ ;  // += 1
+  this.temperature ++ ;
  	this.changeDisplayTemperature();
 };
 
@@ -25,7 +23,7 @@ Thermostat.prototype.decreaseTemperature = function() {
 	if(this.temperature <= this.minTemp) {
 		throw new Error('You cannot go below 10 degrees')};
 	this.temperature --;
-	this.changeDisplayTemperature(); // -= 1
+	this.changeDisplayTemperature();
 };
 
 Thermostat.prototype.changePowerSavingMode = function() {
@@ -48,7 +46,7 @@ Thermostat.prototype.changeDisplayTemperature = function() {
 		return this.displayTemperature = "Yellow";
 	}
 
-	this.displayTemperature = "Red";
+	return this.displayTemperature = "Red";
 
 };
 

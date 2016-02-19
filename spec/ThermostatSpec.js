@@ -1,9 +1,7 @@
 // Unit Tests
 //###########
 
-'use strict';
 
-//1. Thermostat starts at 20 degrees
 
 describe('Thermostat', function() {
     var thermostat;
