@@ -40,15 +40,16 @@ Thermostat.prototype.resetTemperature = function() {
 
 Thermostat.prototype.changeDisplayTemperature = function() {
 	if(this.temperature < 18) {
-		return this.displayTemperature = "Green";
+		return this.displayTemperature = "Low";
 		}
 	else if(this.temperature < 25) {
-		return this.displayTemperature = "Yellow";
+		return this.displayTemperature = "Mid";
 	}
 
-	return this.displayTemperature = "Red";
+	return this.displayTemperature = "High";
 
 };
+
 
 
 

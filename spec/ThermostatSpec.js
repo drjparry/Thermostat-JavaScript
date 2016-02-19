@@ -1,6 +1,3 @@
-// Unit Tests
-//###########
-
 
 
 describe('Thermostat', function() {
@@ -14,7 +11,6 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
-//2. Increases the temperature with the up button
 
 	it('increases in temperature with the up button', function(){
 		thermostat.increaseTemperature();
@@ -93,4 +89,5 @@ describe('Thermostat', function() {
   });
 
 });
+
 
